@@ -1,3 +1,11 @@
 .me{
     background-color: #33cc33 !important;
 }
+.avatar {   
+    float: left;
+    width: 48px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+}

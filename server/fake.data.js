@@ -1,10 +1,5 @@
 const Users = [
   {
-    uid: 'test1',
-    password: 'test1',
-    login: 'test1'
-  },
-  {
     uid: 'test',
     password: 'test',
     login: 'test'

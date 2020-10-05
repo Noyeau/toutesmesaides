@@ -6,7 +6,7 @@
 
           <li class="in">
             <div class="chat-img">
-              <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar2.png">
+              <img alt="Avtar" src="{{getUserAvatar(msg.user.uid)}}">
             </div>
             <div class="chat-body">
               <div class="chat-message">
@@ -20,7 +20,7 @@
       <ng-template #NotMe>
         <li class="out">
           <div class="chat-img">
-            <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+            <img alt="Avtar" src="{{getUserAvatar(msg.user.uid)}}">
           </div>
           <div class="chat-body">
             <div class="chat-message" [ngStyle]="{'background':getUserColor(msg.user.uid)}">

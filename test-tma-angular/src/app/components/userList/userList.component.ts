@@ -15,4 +15,12 @@ export class UserListComponent implements OnInit {
     this.me = this.authService.getUser()
   }
 
+  getUserAvatar(uid){
+    let user=this.users.find(x=>x.uid == uid)
+    if(!user){
+      return 
+    } 
+    return user.avatar 
+  }
+
 }

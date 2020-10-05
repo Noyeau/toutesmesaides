@@ -41,4 +41,12 @@ export class DiscussionComponent implements OnInit {
     return user.color || "#ffffff"
   }
 
+  getUserAvatar(uid){
+    let user=this.users.find(x=>x.uid == uid)
+    if(!user){
+      return 
+    } 
+    return user.avatar 
+  }
+
 }

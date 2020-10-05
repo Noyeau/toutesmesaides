@@ -34,6 +34,7 @@ export class UsersService {
         first(),
         tap((res: any) => this.setUsers(res.data.map((usr, i) => {
           usr.color = this.colorList[i]
+          usr.avatar = "https://www.bootdey.com/img/Content/avatar/avatar"+(i+1)+".png"
           return usr
         })))
       )

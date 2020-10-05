@@ -1,7 +1,10 @@
 <div class="card">
   <div class="card-header">Utilisateurs</div>
   <ul class="list-group w-100">
-    <li *ngFor="let usr of users" class="list-group-item"
-      [ngStyle]="{'background-color':usr.color}" [class.me]="me.uid == usr.uid">{{usr.login}}</li>
+    <li *ngFor="let usr of users" class="list-group-item d-flex justify-content-between align-items-center"
+      [ngStyle]="{'background-color':usr.color}" [class.me]="me.uid == usr.uid">
+      {{usr.login}}
+      <img class="avatar" alt="Avtar" src="{{getUserAvatar(usr.uid)}}">
+    </li>
   </ul>
 </div>
