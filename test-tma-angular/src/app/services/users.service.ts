@@ -3,12 +3,16 @@ import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import {Socket} from "ngx-socket-io";
 import {first, tap} from "rxjs/operators";
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
   private _users: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([])
+
+
+  meColor="#33cc33"
   private colorList = [
     "#3399ff",
     "#6699ff",
@@ -21,11 +25,19 @@ export class UsersService {
     "#ff9966",
     "#ffcc66",
   ]
+
+
   constructor(
     private _http: HttpClient,
-    private socket: Socket
+    private socket: Socket,
+    private authService: AuthService
   ) {
-    this.initUsers().subscribe()
+    
+    this.authService.isConnected().subscribe(res=>{
+      console.log(res)
+      this.initUsers().subscribe()
+    })
+    
   }
 
   initUsers() {
@@ -33,15 +45,23 @@ export class UsersService {
       .pipe(
         first(),
         tap((res: any) => this.setUsers(res.data.map((usr, i) => {
-          usr.color = this.colorList[i]
+
+          // Attribution des couleurs aux users en se basant sur leur ordre
+          if(usr.uid == this.authService.getUser().uid){
+            usr.color = this.meColor
+          } else {
+            usr.color = this.colorList[i]
+          }
+
+          //J'en profite pour leur attribuer un avatar mais ca serait au back de le faire ;)
           usr.avatar = "https://www.bootdey.com/img/Content/avatar/avatar"+(i+1)+".png"
+
           return usr
         })))
       )
   }
 
   setUsers(users) {
-    console.log(users);
       this._users.next(users)
   }
 

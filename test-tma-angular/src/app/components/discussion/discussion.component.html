@@ -9,7 +9,7 @@
               <img alt="Avtar" src="{{getUserAvatar(msg.user.uid)}}">
             </div>
             <div class="chat-body">
-              <div class="chat-message">
+              <div class="chat-message" [ngStyle]="{'background':getUserColor(msg.user.uid)}">
                 <h5>Moi</h5>
                 <p>{{msg.msg}}</p>
               </div>

@@ -33,7 +33,7 @@ export class ChatComponent implements OnInit {
 
   sendNewMessage() {
     this.messagesService.sendOneMessage(this.newMessage).subscribe(res => {
-      this.newMessage = null;
+      this.newMessage = "";
     })
   }
 
