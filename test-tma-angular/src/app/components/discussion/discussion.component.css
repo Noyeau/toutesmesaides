@@ -34,10 +34,12 @@ body{
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    background: #5a99ee;
+    background: #33cc33;
     display: inline-block;
     padding: 10px 20px;
     position: relative;
+    z-index: 1;
+
 }
 
 .chat-list .chat-message:before {
@@ -67,11 +69,12 @@ body{
     width: 70%;
 }
 
-.chat-list .in .chat-message:before {
+/* .chat-list .in .chat-message:before {
     left: -12px;
     border-bottom: 20px solid transparent;
     border-right: 20px solid #5a99ee;
-}
+    z-index: 0;
+} */
 
 .chat-list .out .chat-img {
     float: right;
@@ -87,10 +90,10 @@ body{
     background: #fc6d4c;
 }
 
-.chat-list .out .chat-message:before {
+/* .chat-list .out .chat-message:before {
     right: -12px;
     border-bottom: 20px solid transparent;
     border-left: 20px solid #fc6d4c;
-}
+} */
 
 

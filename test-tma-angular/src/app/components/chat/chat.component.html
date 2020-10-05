@@ -10,7 +10,7 @@
             <textarea [(ngModel)]="newMessage" (keyup.enter)="sendNewMessage()" class="form-control" placeholder="Message"></textarea>
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-                (click)="sendNewMessage()">Envoyer</button>
+                [disabled]="!newMessage.length" (click)="sendNewMessage()">Envoyer</button>
             </div>
           </div>
         </div>

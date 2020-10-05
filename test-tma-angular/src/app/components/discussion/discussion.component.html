@@ -23,7 +23,7 @@
             <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar3.png">
           </div>
           <div class="chat-body">
-            <div class="chat-message">
+            <div class="chat-message" [ngStyle]="{'background':getUserColor(msg.user.uid)}">
               <h5>{{msg.user.login}}</h5>
               <p>{{msg.msg}}</p>
             </div>
