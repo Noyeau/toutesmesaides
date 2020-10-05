@@ -1,0 +1,28 @@
+
+
+  <div class="flex-container">
+    <div class="row"> 
+      <div class="flex-item" [formGroup]="loginForm" >
+        <div class="form-group">
+          <label for="login">Nom d'utilisateur</label>
+          <input type="text" class="form-control" [class.is-invalid]="loginForm.controls.login.touched && loginForm.controls.login.invalid" formControlName="login" id="login">
+          <div class="invalid-feedback">
+           Merci de mettre votre identifiant
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control"  [class.is-invalid]="loginForm.controls.password.touched && loginForm.controls.password.invalid" formControlName="password" id="password">
+          <div class="invalid-feedback">
+            Entrez votre mot de passe
+          </div>
+        </div>
+        <button (click)="send()" [disabled]="loginForm.invalid" class="btn btn-primary">Connexion</button>
+        <button  class="btn btn-success" routerLink="/insciption">Créer un compte</button>
+      
+      </div>
+    </div>
+</div>
+  
+
+

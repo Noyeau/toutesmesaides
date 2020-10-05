@@ -1,0 +1,35 @@
+<div class="flex-container">
+  <div class="row">
+    <div [formGroup]="form" class="flex-item">
+      <div class="form-group">
+        <label for="login">Nom d'utilisateur</label>
+        <input type="text" class="form-control"
+          [class.is-invalid]="form.controls.login.touched && form.controls.login.invalid" formControlName="login"
+          id="login">
+        <div class="invalid-feedback">
+          Merci de mettre votre identifiant
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control"
+          [class.is-invalid]="form.controls.password.touched && form.controls.password.invalid"
+          formControlName="password" id="password">
+        <div class="invalid-feedback">
+          Entrez votre mot de passe
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password2">Password vérification</label>
+        <input type="password" class="form-control"
+          [class.is-invalid]="form.controls.password2.touched && form.controls.password2.invalid"
+          formControlName="password2" id="password2">
+        <div class="invalid-feedback">
+          Les mots de passe doivent etre identique
+        </div>
+      </div>
+      <button (click)="send()" [disabled]="form.invalid" class="btn btn-primary">Connexion</button>
+
+    </div>
+  </div>
+</div>

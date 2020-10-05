@@ -15,6 +15,7 @@ export class AuthService {
   ) {
     const user = this._getLocalStorageUser();
     if (user) {
+      this._user = user
       this._setConnected(user)
     }
   }
@@ -61,6 +62,11 @@ export class AuthService {
       )
   }
 
+  signOut(){
+    localStorage.removeItem('user')
+    this._authStatus$.next({user:null, state: 'anonyme'})
+  }
+
   private _setLocalStorageUser(user) {
     localStorage.setItem('user', JSON.stringify(user))
   }
@@ -79,4 +85,6 @@ export class AuthService {
       this._setLocalStorageUser(user)
     }
   }
+
+
 }

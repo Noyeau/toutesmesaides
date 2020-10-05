@@ -45,5 +45,20 @@ router.post('/', (req, res) => {
 
 })
 
+router.get('/', (req, res) => {
+  try {
+    const user = req.user;
+
+    let messages = messageService.getAllMessages()
+    return  res.status(200).send(messages)
+  } catch (e) {
+    if (e.status) {
+      return res.status(e.status).send({sate: 'error', data: e.msg})
+    }
+    return res.status(500).send({sate: 'error', data: e})
+  }
+
+})
+
 
 module.exports = router;

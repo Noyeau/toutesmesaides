@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">Chat général</div>
+    <div class="card-body height3">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <app-discussion id="discussion" [messages]="messages" class="discussion"></app-discussion>
+
+          <div class="input-group mb-3">
+            <textarea [(ngModel)]="newMessage" (keyup.enter)="sendNewMessage()" class="form-control" placeholder="Message"></textarea>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                (click)="sendNewMessage()">Envoyer</button>
+            </div>
+          </div>
+        </div>
+      <div class="col-12 col-md-4">
+        <app-userList [users]="users"></app-userList>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

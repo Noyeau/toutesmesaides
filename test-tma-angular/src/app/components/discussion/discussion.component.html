@@ -1,0 +1,34 @@
+
+
+    <ul class="chat-list">
+      <ng-container *ngFor="let msg of messages">
+        <ng-container *ngIf="msg.user.login == me.login; else NotMe">
+
+          <li class="in">
+            <div class="chat-img">
+              <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar2.png">
+            </div>
+            <div class="chat-body">
+              <div class="chat-message">
+                <h5>Moi</h5>
+                <p>{{msg.msg}}</p>
+              </div>
+            </div>
+          </li>
+    
+        </ng-container>
+      <ng-template #NotMe>
+        <li class="out">
+          <div class="chat-img">
+            <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+          </div>
+          <div class="chat-body">
+            <div class="chat-message">
+              <h5>{{msg.user.login}}</h5>
+              <p>{{msg.msg}}</p>
+            </div>
+          </div>
+        </li>
+      </ng-template>
+      </ng-container>
+    </ul>
