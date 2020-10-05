@@ -45,6 +45,25 @@ router.post('/', (req, res) => {
 
 })
 
+
+/**
+ * @swagger
+ * /messages:
+ *   get:
+ *     tags:
+ *       - Message
+ *     description: Get All messages
+ *     produces:
+ *       - application/json
+ *     responses:
+ *      200:
+ *        description: 'messages'
+ *      400:
+ *        description: 'missing data'
+ *      500:
+ *        description: 'error server'
+ *
+ */
 router.get('/', (req, res) => {
   try {
     const user = req.user;
