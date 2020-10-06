@@ -34,8 +34,10 @@ export class UsersService {
   ) {
     
     this.authService.isConnected().subscribe(res=>{
-      console.log(res)
-      this.initUsers().subscribe()
+      //On prend la liste des users seulement quand on est connecté
+      if(res){
+        this.initUsers().subscribe()
+      }
     })
     
   }

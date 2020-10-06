@@ -26,6 +26,7 @@ export class NewCompteComponent implements OnInit {
   }
 
   send() {
+    this.form.controls.password2.updateValueAndValidity()
     console.log(this.form)
     if (this.form.valid) {
       this.authService.signUp(this.form.value.login, this.form.value.password, this.form.value.password2).subscribe(res => {

@@ -10,11 +10,7 @@
     align-items: center;
     justify-content: center;
 }
-.row {
-    width: auto;
-    border: 1px solid blue;
-    border-radius: 5px;
-}
+
 .flex-item {
     padding: 5px;
     margin: 10px;
